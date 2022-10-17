@@ -5,9 +5,9 @@ import torch
 from PIL import Image
 import numpy as np
 from skimage import exposure
-from classification_task.utils_cls import *
+from classification_task.utils_cls import config
 
-config = load_config("classification_task/config.yaml")
+# config = load_config("classification_task/config.yaml")
 class RandomCrop(transforms.RandomResizedCrop):
     def __call__(self, imgs):
         i, j, h, w = self.get_params(imgs, self.scale, self.ratio)

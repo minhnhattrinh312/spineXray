@@ -2,13 +2,11 @@ import pytorch_lightning as pl
 import torch
 import pandas as pd
 from torch.utils.data import DataLoader
-from classification_task.dataset import ClsLoader
-from classification_task.model import *
-from classification_task.utils_cls import *
+
+from classification_task import *
 from sklearn.metrics import accuracy_score, f1_score, roc_curve, roc_auc_score, confusion_matrix
 import numpy as np
 if __name__ == "__main__":
-    config = load_config("classification_task/config.yaml")
     
     device = "gpu" if torch.cuda.is_available() else "cpu"
 

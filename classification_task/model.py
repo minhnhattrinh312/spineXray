@@ -9,8 +9,8 @@ import timm.optim
 from classification_task.loss import FocalLoss, SupConLoss
 import torch.optim as optim
 from classification_task.metrics import accuracy, f1_score
-from classification_task.utils_cls import load_config
-config = load_config("classification_task/config.yaml")
+from classification_task.utils_cls import *
+# config = load_config("classification_task/config.yaml")
 
 class LayerNorm(nn.Module):
     def __init__(self, normalized_shape, eps=1e-6, data_format="channels_first"):

@@ -1,19 +1,19 @@
 import pytorch_lightning as pl
 from pytorch_lightning.callbacks import LearningRateMonitor
-from classification_task.metrics import HistoryLogger
+# from classification_task import HistoryLogger
 import torch
 import pandas as pd
 from torch.utils.data import DataLoader
-from classification_task.dataset import ClsLoader
-from classification_task.model import *
+# from classification_task import ClsLoader
+from classification_task import *
 from IPython.display import clear_output
 from pytorch_lightning.loggers import WandbLogger
 import pdb
-from classification_task.utils_cls import *
+# from classification_task.utils_cls import *
 
 
 if __name__ == "__main__":
-    config = load_config("classification_task/config.yaml")
+    # config = load_config("classification_task/config.yaml")
     device = "gpu" if torch.cuda.is_available() else "cpu"
 
     train_csv = pd.read_csv(

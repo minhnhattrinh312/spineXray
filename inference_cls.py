@@ -4,18 +4,15 @@ from tqdm import tqdm
 import pandas as pd
 from PIL import Image
 from torch.utils.data import DataLoader
-from classification_task.dataset import ClsLoader
+from classification_task import ClsLoader, ClassifyNet_vs2, Classifier, config
 import numpy as np
 import torch
 from sklearn.metrics import accuracy_score, f1_score, roc_curve, roc_auc_score, confusion_matrix
-from classification_task.model import ClassifyNet_vs2, Classifier
-from classification_task.utils_cls import load_config
+
 
 import numpy as np
 import pdb
 
-
-config = load_config("classification_task/config.yaml")
 
 path_dataset = "vindr-spinexr-dataset"
 
@@ -52,8 +49,6 @@ if __name__ == "__main__":
     test_csv = pd.read_csv(
         f"{path_dataset}/test_classify.csv", index_col=0)
     test_path = f"{path_dataset}/test_images_png_224/"
-
-    config = load_config("classification_task/config.yaml")
 
     test_dataset = DataLoader(ClsLoader(test_path, test_csv, typeData="test"), batch_size=128,
                               num_workers=4, prefetch_factor=64)
