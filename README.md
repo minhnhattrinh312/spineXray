@@ -12,7 +12,7 @@ In this project, we employ a framework to classify spinal lesions from [VinDr-Sp
 To install in Docker container
 
 ```bash
-docker-compose up
+docker pull aominebka/spine_cls:v1
 ```
 ```bash
 docker run -it nhat/spine_cls:v1 
