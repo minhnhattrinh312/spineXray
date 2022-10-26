@@ -1,15 +1,12 @@
 import pytorch_lightning as pl
 from pytorch_lightning.callbacks import LearningRateMonitor
-# from classification_task import HistoryLogger
 import torch
 import pandas as pd
 from torch.utils.data import DataLoader
-# from classification_task import ClsLoader
 from classification_task import *
 from IPython.display import clear_output
 from pytorch_lightning.loggers import WandbLogger
 import pdb
-# from classification_task.utils_cls import *
 
 
 if __name__ == "__main__":
@@ -49,7 +46,7 @@ if __name__ == "__main__":
                                                             auto_insert_metric_name=False, save_last=False
                                                             # every_n_epochs=100
                                                             )
-    chk_path = "classification_task/weights/first_stage.ckpt"    
+    chk_path = "classification_task/weights/first_stage_cls.ckpt"    
     classifier = classifier.load_from_checkpoint(checkpoint_path=chk_path, model=model, class_weight=config['CLASS_WEIGHT'], num_classes=config["NUM_CLASS"], 
     learning_rate=config["LEARNING_RATE"], strict=False)
 

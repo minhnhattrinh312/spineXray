@@ -29,7 +29,7 @@ if __name__ == "__main__":
               }
 
     trainer = pl.Trainer(**PARAMS)
-    chk_path = "classification_task/weights/best_weight.ckpt"
+    chk_path = "classification_task/weights/best_weight_cls.ckpt"
     classifier = classifier.load_from_checkpoint(checkpoint_path=chk_path, model=ClassifyNet_vs2(), class_weight=config['CLASS_WEIGHT'],
                                                  num_classes=config["NUM_CLASS"], learning_rate=config["LEARNING_RATE"])
 

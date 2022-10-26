@@ -2,7 +2,6 @@ import pytorch_lightning as pl
 import torch.nn as nn
 import csv
 import os
-from IPython.display import clear_output
 import torch
 
 class HistoryLogger(pl.callbacks.Callback):

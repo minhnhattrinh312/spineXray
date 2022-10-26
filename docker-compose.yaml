@@ -1,0 +1,7 @@
+version: "3"
+services:
+  spine_cls:
+    image: nhat/spine_cls:v1
+    build:
+      context: .
+      dockerfile: Dockerfile_cls
