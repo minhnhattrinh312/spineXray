@@ -10,7 +10,7 @@ RUN useradd -ms /bin/bash apprunner
 USER apprunner
 WORKDIR /home/apprunner
 
-ENV PATH="/home/appuser/.local/bin:${PATH}"
+ENV PATH="/home/apprunner/.local/bin:${PATH}"
 COPY ./requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 COPY ./download_code.sh .
