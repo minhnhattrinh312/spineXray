@@ -8,11 +8,23 @@ In this project, we employ a framework to classify spinal lesions from [VinDr-Sp
 >
 > The weights of our classification task can be found at this [drive](https://drive.google.com/drive/folders/14dB6Gn3c8u7QKrgwfh71qLwaTw0kptyv?usp=sharing).
 
+## Installation
+To install in Docker container
 
+```bash
+docker-compose up
+```
+```bash
+docker run -it nhat/spine_cls:v1 
+```
+Then in the container, to download the code, run the command line:
+```bash
+source download_code.sh
+```
 ## Overall framework
 ### Preprocessing
 We convert dicom images to png images and resize them to the size of (224, 224). Images are preprocessed regarding the following script:
-```
+```bash
 python preprocess_cls.py
 ```
 ### Train classification task
@@ -20,11 +32,11 @@ python preprocess_cls.py
 1. Train contrastive learning loss to learn a model to generate good latent space.
 
 To train the classification task, in stage 1, you need to adjust the **classification_task/config.yaml** to :
-```
+```bash
 SUP_LOSS: True
 ```
 and run following command: 
-```
+```bash
 python train_cls.py
 ```
 2. Continue training the second stage to predict the abnormalities of images.
@@ -32,7 +44,7 @@ After get the best weight in stage 1, you can freeze or fine tune the weight to 
 
 ### Evaluate Results
 To assess the performance of the method, run the following command:
-```
+```bash
 python evaluate_cls.py
 ```
 Our result :
