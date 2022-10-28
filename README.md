@@ -15,7 +15,7 @@ To install in Docker container
 docker pull aominebka/spine_cls:v1
 ```
 ```bash
-docker run -it nhat/spine_cls:v1 
+docker run -it aominebka/spine_cls:v1 
 ```
 Then in the container, to download the code, run the command line:
 ```bash
