@@ -4,7 +4,6 @@ import torch
 import pandas as pd
 from torch.utils.data import DataLoader
 from classification_task import *
-from IPython.display import clear_output
 from pytorch_lightning.loggers import WandbLogger
 import pdb
 
