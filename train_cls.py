@@ -6,8 +6,6 @@ from torch.utils.data import DataLoader
 from classification_task import *
 from pytorch_lightning.loggers import WandbLogger
 
-import pdb
-
 
 
 if __name__ == "__main__":
