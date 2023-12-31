@@ -50,4 +50,3 @@ if __name__ == "__main__":
     print("specificity:", specificity)
     print("sensitivity:", sensitivity)
     print("roc_auc_score:", roc_auc_score(labels, pred[:,1]))
-    print("done!!!")
